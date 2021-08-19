@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,26 +13,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="chyamadaKadai9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9jQ-ec-sgq">
-                                <rect key="frame" x="50" y="144" width="314" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="9jQ-ec-sgq">
+                                <rect key="frame" x="40" y="100" width="240" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="都道府県" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-GY-gwt">
-                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="都道府県" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-GY-gwt">
+                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="未選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk6-fy-oQh">
-                                        <rect key="frame" x="136.5" y="0.0" width="64.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="未選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="vk6-fy-oQh">
+                                        <rect key="frame" x="111.5" y="0.0" width="54" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPo-dt-FxV">
-                                        <rect key="frame" x="251" y="0.0" width="63" height="30"/>
+                                        <rect key="frame" x="205.5" y="0.0" width="34.5" height="30"/>
                                         <state key="normal" title="入力"/>
                                         <connections>
                                             <segue destination="SAv-AW-VUU" kind="presentation" identifier="firstSegue" id="SLK-J0-DPh"/>
@@ -44,9 +44,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9jQ-ec-sgq" secondAttribute="trailing" constant="50" id="DBa-wE-93v"/>
-                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="UCV-BW-xvP"/>
-                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="jgG-rf-Usn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9jQ-ec-sgq" secondAttribute="trailing" priority="750" constant="50" id="1LK-f4-2Wl"/>
+                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2QF-n7-f8L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9jQ-ec-sgq" secondAttribute="trailing" constant="40" id="DBa-wE-93v"/>
+                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KM4-FN-ugg"/>
+                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="750" constant="50" id="WeB-Yo-NnN"/>
+                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jgG-rf-Usn"/>
+                            <constraint firstItem="9jQ-ec-sgq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="qor-g2-o4G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I49-6i-dAR"/>
@@ -64,11 +68,11 @@
                 <navigationController id="SAv-AW-VUU" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oHC-gz-7kF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Rz-KM-5wf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RVl-aa-jF2">
-                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
+                        <rect key="frame" x="0.0" y="-20" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -82,15 +86,13 @@
         <!--Prefecture Select View Controller-->
         <scene sceneID="6hX-gN-iAE">
             <objects>
-                <exit id="8nE-zl-qgv" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bf1-gJ-F0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="RZb-0X-k2G" customClass="PrefectureSelectViewController" customModule="chyamadaKadai9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VwT-OC-J9T">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="QgY-Ae-lXa" userLabel="Prefecture Button Stack View">
-                                <rect key="frame" x="184" y="131" width="46" height="198"/>
+                                <rect key="frame" x="137" y="131" width="46" height="198"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-ap-9N8">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
@@ -132,6 +134,8 @@
                         <outlet property="thirdPrefectureButton" destination="gCJ-RO-Kpy" id="G18-eJ-f68"/>
                     </connections>
                 </viewController>
+                <exit id="8nE-zl-qgv" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bf1-gJ-F0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2449" y="179"/>
         </scene>
