@@ -20,6 +20,8 @@ final class PrefectureSelectViewController: UIViewController {
          forthPrefectureButton]
     }
 
+    private(set) var selectedPrefectureName = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,7 @@ final class PrefectureSelectViewController: UIViewController {
             if let prefecture = PrefectureList.init(rawValue: $0.tag) {
                 $0.setTitle(prefecture.name, for: .normal)
             } else {
+                // UIButton数が列挙されているcaseより多い場合には表示しない処理
                 $0.isHidden = true
             }
 
@@ -39,10 +42,8 @@ final class PrefectureSelectViewController: UIViewController {
     }
 
     @objc private func prefectureButtonDidTouched(sender: UIButton) {
-        guard let viewController = presentingViewController as? ViewController else { return }
-        if let prefecture = PrefectureList.init(rawValue: sender.tag) {
-            viewController.setLabelText(prefectureName: prefecture.name)
-        }
-        performSegue(withIdentifier: "toFirst", sender: self)
+        guard let selectedPrefectureButton = PrefectureList.init(rawValue: sender.tag) else { return }
+        selectedPrefectureName = selectedPrefectureButton.name
+        performSegue(withIdentifier: "exitDone", sender: nil)
     }
 }

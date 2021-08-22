@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Source View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="chyamadaKadai9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SourceViewController" customModule="chyamadaKadai9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                                         <rect key="frame" x="205.5" y="0.0" width="34.5" height="30"/>
                                         <state key="normal" title="入力"/>
                                         <connections>
-                                            <segue destination="SAv-AW-VUU" kind="presentation" identifier="firstSegue" id="SLK-J0-DPh"/>
+                                            <segue destination="SAv-AW-VUU" kind="presentation" identifier="sourceSegue" id="SLK-J0-DPh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -123,7 +123,7 @@
                     <navigationItem key="navigationItem" id="2J2-4o-rtR">
                         <barButtonItem key="leftBarButtonItem" title="キャンセル" id="BSd-E0-V8A">
                             <connections>
-                                <segue destination="8nE-zl-qgv" kind="unwind" identifier="toFirst" unwindAction="exitWithSegue:" id="8r0-L7-6Yx"/>
+                                <segue destination="8nE-zl-qgv" kind="unwind" unwindAction="exitWithSegue:" id="ECN-qi-U9T"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -132,6 +132,7 @@
                         <outlet property="forthPrefectureButton" destination="qK8-sS-FMc" id="ceV-aB-Udb"/>
                         <outlet property="secondPrefectureButton" destination="lSo-3l-PuN" id="eM5-Eq-GzO"/>
                         <outlet property="thirdPrefectureButton" destination="gCJ-RO-Kpy" id="G18-eJ-f68"/>
+                        <segue destination="8nE-zl-qgv" kind="unwind" identifier="exitDone" unwindAction="exitDoneWithSegue:" id="vW9-Lm-du0"/>
                     </connections>
                 </viewController>
                 <exit id="8nE-zl-qgv" userLabel="Exit" sceneMemberID="exit"/>
