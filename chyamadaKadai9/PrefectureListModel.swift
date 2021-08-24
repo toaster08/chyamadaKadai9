@@ -7,22 +7,16 @@
 
 import Foundation
 
-enum PrefectureList: Int {
-    case tokyo = 1
-    case kanagawa
-    case saitama
-    case chiba
+enum PrefectureName {
+    static let tokyo = "東京都"
+    static let kanagawa = "神奈川県"
+    static let saitama = "埼玉県"
+    static let chiba = "千葉県"
 
-    var name: String {
-        switch self {
-        case .tokyo:
-            return "東京都"
-        case .kanagawa:
-            return "神奈川県"
-        case .saitama:
-            return "埼玉県"
-        case .chiba:
-            return "千葉県"
-        }
-    }
+    static let all: [String] = [
+        PrefectureName.tokyo,
+        PrefectureName.kanagawa,
+        PrefectureName.saitama,
+        PrefectureName.chiba
+    ]
 }
