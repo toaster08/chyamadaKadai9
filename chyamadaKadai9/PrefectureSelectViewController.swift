@@ -13,11 +13,23 @@ final class PrefectureSelectViewController: UIViewController {
     @IBOutlet private weak var thirdPrefectureButton: UIButton!
     @IBOutlet private weak var forthPrefectureButton: UIButton!
 
-    private var prefectureButtonArray: [UIButton] {
+    private var prefectureButtons: [UIButton] {
         [firstPrefectureButton,
          secondPrefectureButton,
          thirdPrefectureButton,
          forthPrefectureButton]
+    }
+
+    private struct ButtonInfo {
+        var button: UIButton
+        var name: String
+    }
+
+    private var buttonInfos: [ButtonInfo] {
+        zip(prefectureButtons, PrefectureName.all)
+            .map { button, name in
+                ButtonInfo(button: button, name: name)
+            }
     }
 
     private(set) var selectedPrefectureName = ""
@@ -25,25 +37,24 @@ final class PrefectureSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var tagNumber = 1
-        prefectureButtonArray.forEach {
-            $0.addTarget(self, action: #selector(prefectureButtonDidTouched), for: .touchUpInside)
-            $0.tag = tagNumber
+        buttonInfos
+            .forEach {
+                $0.button.addTarget(
+                    self,
+                    action: #selector(prefectureButtonDidTouched),
+                    for: .touchUpInside
+                )
 
-            if let prefecture = PrefectureList.init(rawValue: $0.tag) {
-                $0.setTitle(prefecture.name, for: .normal)
-            } else {
-                // UIButton数が列挙されているcaseより多い場合には表示しない処理
-                $0.isHidden = true
+                $0.button.setTitle($0.name, for: .normal)
             }
-
-            tagNumber += 1
-        }
     }
 
     @objc private func prefectureButtonDidTouched(sender: UIButton) {
-        guard let selectedPrefectureButton = PrefectureList.init(rawValue: sender.tag) else { return }
-        selectedPrefectureName = selectedPrefectureButton.name
+        guard let name = buttonInfos.first(where: { $0.button == sender })?.name else {
+            return
+        }
+
+        selectedPrefectureName = name
         performSegue(withIdentifier: "exitDone", sender: nil)
     }
 }
